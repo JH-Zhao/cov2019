@@ -194,6 +194,4 @@ def update_history():
     finally:
         close_conn(conn, cursor)
 
-#开始更新
-#再次测试
-#应该可以了
+
