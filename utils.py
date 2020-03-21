@@ -27,9 +27,10 @@ def get_conn():
     :return:连接，游标
     """
     # 创建连接
-    conn = pymysql.connect(host="localhost",
-                           user="root",
-                           db="cov",
+    conn = pymysql.connect(host="120.55.57.80",
+                           user="zjh",
+                           password="zjh",
+                           db="yiqing_fenxi",
                            charset="utf8")
     # 创建游标
     cursor = conn.cursor()
@@ -96,4 +97,4 @@ def get_r2_data():
 
 
 if __name__=="__main__":
-    print(get_r2_data())
+    print(get_l1_data())
