@@ -97,4 +97,4 @@ def get_r2_data():
 
 
 if __name__=="__main__":
-    print(get_r2_data())
+    print(get_l1_data())
