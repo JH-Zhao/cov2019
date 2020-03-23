@@ -13,5 +13,21 @@
    <div id="center">中间大图</div>
     <script src="../static/js/firstpage.js"></script>
 
+   <script>
+        function get_all_data() {
+             $.ajax({
+                url:"/center",
+                success:function (data) {
+                    firstpage_option.baseOption.series[0].data=data.data;
+                    firstpage.setOption(firstpage_option)
+                },
+                error:function (xhr,type,errorThrown) {
+
+                }
+            })
+        }
+        get_all_data();
+    </script>
+
 </body>
 </html>

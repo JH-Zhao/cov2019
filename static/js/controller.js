@@ -102,6 +102,19 @@ function get_r2_data() {
     })
 }
 
+function get_all_data() {
+     $.ajax({
+        url:"/center",
+        success:function (data) {
+            firstpage_option.baseOption.series[0].data=data.data;
+            firstpage.setOption(firstpage_option)
+        },
+        error:function (xhr,type,errorThrown) {
+
+        }
+    })
+}
+
 gettime();
 get_c1_data();
 get_c2_data();
@@ -109,6 +122,7 @@ get_l1_data();
 get_l2_data();
 get_r1_data();
 get_r2_data();
+get_all_data();
 
 setInterval(gettime,1000);
 setInterval(get_c1_data,10000);
@@ -117,3 +131,4 @@ setInterval(get_l1_data,10000*10);
 setInterval(get_l2_data,10000*10);
 setInterval(get_r1_data,10000*10);
 setInterval(get_r2_data,10000*10);
+setInterval(get_all_data,10000*10);

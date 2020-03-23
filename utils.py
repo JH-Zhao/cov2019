@@ -95,6 +95,12 @@ def get_r2_data():
     res=query(sql)
     return res
 
+def get_all_data():
+    sql=' select "中国" as country,sum(confirm) as confirm  from details UNION  SELECT country,confirm from `foreign`'
+    #sql='select "中国" as country,sum(confirm) as confirm  from details '
+    res=query(sql)
+    return res
+
 
 if __name__=="__main__":
-    print(get_l1_data())
+    print(get_all_data())
