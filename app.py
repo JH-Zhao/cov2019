@@ -9,6 +9,10 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
    # return 'Hello World!'
+    return render_template("hello.html")
+
+@app.route('/main')
+def china_page():
     return render_template("main.html")
 
 @app.route('/ajax',methods=["get","post"])
@@ -76,6 +80,15 @@ def get_r2_data():
         confirm.append(b)
         dead.append(c)
     return jsonify({"country":country,"confirm":confirm,"dead":dead})
+
+@app.route("/center")
+def get_all_data():
+    res=[]
+    for tup in utils.get_all_data():
+        print(tup)
+        res.append({"name":tup[0],"value":int(tup[1])})
+    return jsonify({"data":res})
+
 
 import json
 import flask
