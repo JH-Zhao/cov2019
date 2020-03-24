@@ -3730,12 +3730,15 @@ var firstpage_option = {
 
     },*/
     baseOption: {
-         title: {
+        /* title: {
             text: '疫情可视化数据分析系统',
             //subtext: '数据来源：worldbank data',
+             textStyle:{
+                fontsize:40,
+             },
             left: 'center',
             top: 10
-         },
+         },*/
         visualMap: {
             //name:'美元',
             //max: 1e+11,
